@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 
 	<!-- MY OWN CSS -->
-	<link rel="stylesheet" href="/css/style.css"/>
+	<link rel="stylesheet" href="/css/scottsStyle.css"/>
 
 	<!-- FOR ANY BOOTSTRAP THAT USES JS OR jQuery-->
 	<script src="/webjars/jquery/jquery.min.js"></script>
@@ -22,65 +22,77 @@
 	<script type="text/javascript" src="/javascript/javascript.js" defer></script>
 	<title>Order Details</title>
 </head>
-<body class="bg-dark">
-	<div class="container border border-dark bg-dark text-light">
-		<h1 class="title_grad txt_grad title_bar" >Order Details</h1>
-		<hr>
-		<div class="d-flex flex-row justify-content-center">
-			<div class="ms-3 w-50">
-				<p class="text-left width70">${user.firstName} ${user.lastName}</p>
+<body>
+<div id="page">
+	<div id="headerWrapper">
+			<div id="logoWrapper">
+				<h2>Tony's Pizza</h2>
 			</div>
-			<div class="taskbarBtns">
 				<a class="links" href="/home">Home</a>
 				<a class="links" href="/edit/user">Edit Profile</a>
 				<a class="links" href="/make/order">Order</a>
 				<a class="links" href="/logout">Logout <span>- (${user.firstName} ${user.lastName}) </span></a>
-			</div>
-		</div>
+	</div><br>	
+		<h1 class="title_grad txt_grad title_bar" >Order Confirmed</h1>
 		<hr>
-		
-		<div class="d-flex flex-row justify-content-between h-100 border">
-		
-			<div class="d-flex flex-column w-50 h-100">
-				<div class="p-4 mb-5">
-					<h2 class="text-center" > ~ <span class="text-center bold bg2_grad">Pizza</span> ~ </h2>
+		<div>
+		</div>
+
+				<div id="showOrderWrapper">
+					<h2 class="text-center" > ~ <span>Order Details</span> ~ </h2>
 					<hr>
-					<div class="d-flex flex-column justify-content-between">
-						<p class="bold txt-underline font-size color-bl">Name: </p>
-						<p class="txt-left ms-3 color-gr">${order.user.firstName} ${order.user.lastName}</p>
+					<div>
+						<h3>Name: ${order.user.firstName} ${order.user.lastName}</h3>
 					</div>
-					<div class="d-flex flex-column justify-content-between">
-						<p class="bold txt-underline font-size color-bl">Method: </p>
-						<p class="txt-left ms-3 color-gr">${order.method}</p>
+					<div>
+						<h3>Method: ${order.method}</h3>
 					</div>
 
-					<div class="d-flex flex-column justify-content-between">
-						<p class="bold txt-underline font-size color-bl">Crust: </p>
-						<p class="txt-left ms-3 color-gr">${order.crust}</p>
+					<div>
+						<h3>Crust: ${order.crust}</h3>
 					</div>
-					<div class="d-flex flex-column justify-content-between">
-						<p class="bold txt-underline font-size color-bl">Size: </p>
-						<p class="txt-left ms-3 color-gr">${order.size}</p>
+					<div>
+						<h3>Size: ${order.size}</h3>
 					</div>
-					<div class="d-flex flex-column justify-content-between">
-						<p class="bold txt-underline font-size color-bl">Toppings: </p>
-						<p class="txt-left ms-3 color-gr">${order.toppings}</p>
+					<div>
+						<h3>Toppings: ${order.toppings}</h3>
 					</div>
-					<div class="d-flex flex-column justify-content-between">
-						<p class="bold txt-underline font-size color-bl">Price: </p>
-						<p class="txt-left ms-3 color-gr">${order.price}</p>
+					<div>
+						<h3>Price: ${order.price}</h3>
 					</div>
 
 					<c:if test="${user.id == algo.user.id}">
-						<div class="d-flex flex-row justify-content-around m-3">
+						<div>
 							<a class="btns" href="/edit/order/${order.id}">Edit</a>
 							<a class="btns text-danger" href="/delete/algo/${order.id}">Delete</a>
 						</div>
-					</c:if>
+					</c:if><br>
+					    <div class="d-flex flex-row justify-content-around m-3">
+				        	<a class="button1" href="/make/order">Order Again!</a>
+				        	<a class="button" href="/home">Home</a>
+				    	</div>
 				</div>
+				<br>
+				
+				<div id="showDeliveryDetails">
+					<h2 class="text-center" ><span> ~Your Delivery Info ~<br>(if delivery was method)</span></h2>
+					<hr>
+					<div>
+						<h3>Name: ${order.user.firstName} ${order.user.lastName}</h3>
+					</div>
+					<div>
+						<h3>Address: ${order.user.address}</h3>
+					</div>
+
+					<div>
+						<h3>City: ${order.user.city}</h3>
+					</div>
+					<div>
+						<h3>State: ${order.user.state}</h3>
+					</div>
+						</div>
 			</div>
-		</div>
-	</div>
+		
 </body>
 </html>
 

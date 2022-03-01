@@ -103,6 +103,8 @@
 </body>
 </html>
 
+<h2>test for github, okay to delete this push, it is just a test</h2>
+
 <%-- <c:out value="${user.email}"></c:out> --%>
 <!-- 				        <p class="mb-3 mt-t"> -->
 <%-- 				            <form:label path="picture">Picture: </form:label> --%>

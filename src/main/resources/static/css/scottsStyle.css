@@ -266,13 +266,48 @@ body{
 }
 #showOrderWrapper{
 	background: white;
-	width: 600px;
-	margin: auto;
+	width: 500px;
+	margin: 0px 0px 0px 150px;
 	align-items: center;
-	
-	
+	font-weight: bold;
+    text-align: center;
+    padding: 60px;
+}
+#showDeliveryDetails{
+	background: white;
+	width: 500px;
+	margin: -490px 0px 0px 815px;
+	align-items: center;
+	font-weight: bold;
+    text-align: center;
+    padding: 50px;
+}
+#account{
+	text-align: center;
 }
 
+.button {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.button1 {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+}
 
 
 

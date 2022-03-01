@@ -45,7 +45,7 @@ body
 	justify-content: center;
 	align-items: center;
 	border-bottom: 1px darkgrey solid;
-	
+	border-top: 1px darkgrey solid;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	margin: 20px 15px;
@@ -254,33 +254,5 @@ body
     width: 100%;
     border: solid darkgrey 1px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

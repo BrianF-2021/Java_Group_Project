@@ -1,5 +1,8 @@
 package com.brianfair.javagroupproject.models;
 
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -106,6 +109,11 @@ public class Order
 //	private List<View> views;
 
 	
+//	public String getDateFormatted() {
+//		SimpleDateFormat df = new SimpleDateFormat("MMMM dd, yyy");
+//		return df.format(this.createdAt);
+//	}
+	
     @PrePersist
     private void onCreate(){
         this.createdAt = new Date();
@@ -202,6 +210,15 @@ public class Order
 
 	public void setLikers(List<User> likers) {
 		this.likers = likers;
+	}
+	
+	public String getDateFormatted()
+	{
+		String pattern = "E, MMM dd, yyyy";
+		Date orderDate = getCreatedAt();
+		String dateToStr = DateFormat.getInstance().format(orderDate);
+		System.out.println(dateToStr);
+		return dateToStr;
 	}
 
     

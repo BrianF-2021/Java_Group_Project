@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 
 	<!-- MY OWN CSS -->
-	<link rel="stylesheet" href="/css/style.css"/>
+	<link rel="stylesheet" href="/css/scottsStyle.css"/>
 
 	<!-- FOR ANY BOOTSTRAP THAT USES JS OR jQuery-->
 	<script src="/webjars/jquery/jquery.min.js"></script>
@@ -22,26 +22,28 @@
 	<script type="text/javascript" src="/js/uploader.js" defer></script>
 	<title>Edit User</title>
 </head>
-<body class="bg-dark">
-	<div class="container border text-light border bg-dark p-3">
-		<h1 class="title_grad txt_grad title_bar" >Edit Profile</h1>
-		<div class="container border border-dark" >
-			<div class="taskbar">
-				<div class="w-75">
-					<p class="text-left width70">${user.firstName} ${user.lastName}</p>
-				</div>
-	<!-- 			<div class="d-flex flex-row justify-content-around width30"> -->
-				<div class="taskbarBtns">
-					<a class="links" href="/home">Home</a>
-					<a class="links" href="/make/order">Order</a>
-					<a class="links" href="/logout">Logout - (${user.firstName} ${user.lastName})</a>
-				</div>
+<body id="body1">
+<div id="page">
+	<div id="headerWrapper">
+			<div id="logoWrapper">
+				<h2>Tony's Pizza</h2>
 			</div>
+				<a class="links" href="/home">Home</a>
+				<a class="links" href="/edit/user">Edit Profile</a>
+				<a class="links" href="/make/order">Order</a>
+				<a class="links" href="/logout">Logout <span>- (${user.firstName} ${user.lastName}) </span></a>
+	</div><br>	
+	<div>
+		<h1 class="title_grad txt_grad title_bar" >Edit Profile</h1>
+		<div>
+
 		
-		 	<div class="d-flex flex-column justify-content-center m-5 bg-dark">   
-				<h1 class="text-left color-bl" >Account: </h1>
+		 	<div><br>
 			 	<div class="d-flex flex-column justify-content-center align-items-center mb-5">   
-				    <form:form class="form-control w-75" method="POST" action="/editing/user/${user.id}" modelAttribute="user">
+				    <form:form class="form-control w-50" method="POST" action="/editing/user/${user.id}" modelAttribute="user">
+				    <div id="account">
+				    <h1>~Account Information~</h1>
+				    </div>
 		   		        <p class="mb-3 mt-t">
 				            <form:label path="firstName">First Name: </form:label>
 				            <form:errors class="text-danger" path="firstName"/>
@@ -85,14 +87,15 @@
 				            <form:password class="form-control" placeholder="Password" path="passwordConfirmation" value="${user.password}"/>
 				        </p>
        			        <div class="d-flex flex-row justify-content-around m-3">
-				        	<input class="btns" type="submit" value="Submit"/>
-				        	<a class="btns" href="/home">Cancel</a>
+				        	<input class="button1" type="submit" value="Submit"/>
+				        	<a class="button" href="/home">Cancel</a>
 				    	</div>
 		    		</form:form>
 		     	</div>
 		     </div>	
     	</div>
     </div>
+   </div>
 </body>
 </html>
 

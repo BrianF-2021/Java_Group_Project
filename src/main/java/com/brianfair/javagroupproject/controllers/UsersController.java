@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.brianfair.javagroupproject.models.Prices;
+import com.brianfair.javagroupproject.models.StringArrayFunctions;
 import com.brianfair.javagroupproject.models.User;
 import com.brianfair.javagroupproject.services.UserService;
 import com.brianfair.javagroupproject.validators.UserValidation;
@@ -36,6 +38,7 @@ public class UsersController
 
 	@RequestMapping("/")
 	public String registerForm(@ModelAttribute("user") User user) {
+		System.out.println(user.getDateFormatted());
 	    return "main.jsp";
 	}
 
@@ -149,31 +152,6 @@ public class UsersController
 	}
 	  
 
-	@RequestMapping("/like/{id}")
-	public String like(@PathVariable("id") Long order_id, HttpSession session)
-	{
-		if (session.getAttribute("user_id") == null)
-		{
-			return "redirect:/";
-		}
-		Long user_id = (Long)session.getAttribute("user_id");
-		User usr = this.userService.findUserById(user_id);
-		return "redirect:/home";
-	}
-	
-	@RequestMapping("/unlike/{id}")
-	public String unlike(@PathVariable("id") Long order_id, HttpSession session)
-	{
-		if (session.getAttribute("user_id") == null)
-		{
-			return "redirect:/";
-		}
-		Long user_id = (Long)session.getAttribute("user_id");
-		User usr = this.userService.findUserById(user_id);
-		return "redirect:/home";
-	}
-	
-	
   @RequestMapping("/logout")
   public String logout(HttpSession session)
   {
